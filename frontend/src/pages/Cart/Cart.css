@@ -51,7 +51,7 @@
     border: none;
     color: white;
     background-color: tomato;
-    width: max(15vw 200px);
+    width: max(15vw ,200px);
     padding: 12px 0px;
     border-radius: 4px;
     cursor: pointer;
@@ -79,11 +79,28 @@
     padding-left: 10px;
 }
 .cart-promocode-input button{
-    width: max(10vw 150px);
+    width: max(10vw, 150px);
     padding: 12px 5px;
     background-color: black;
     border: none;
     color: white;
     border-radius: 4px;
 
+}
+@media (max-width: 750px) {
+  .cart-bottom {
+    flex-direction: column;
+  }
+
+  .cart-promocode {
+    width: 100%;
+  }
+
+  .cart-promocode-input {
+    width: 100%;
+  }
+
+  .cart-total button {
+    width: 100%;
+  }
 }
