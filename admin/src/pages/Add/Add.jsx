@@ -2,6 +2,9 @@ import "./Add.css";
 import { assets } from "../../assets/assets";
 import React, { useState } from "react";
 import axios from "axios"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Add = () => {
     const url="http://localhost:4000";
@@ -41,8 +44,9 @@ const Add = () => {
             category: "Salad",
         })
         setImage(false)
+        toast.success(response.data.message)
     }else{
-
+      toast.error(response.data.message)
     }
     
   }
@@ -114,6 +118,7 @@ const Add = () => {
               <option value="Pure Veg">Pure Veg</option>
               <option value="Pasta">Pasta</option>
               <option value="Noodles">Noodles</option>
+              <option value="Ice Cream">Ice Cream</option>
             </select>
           </div>
 
