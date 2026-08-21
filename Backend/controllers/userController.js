@@ -1,4 +1,4 @@
-import userModel from "../models/userModel";
+import userModel from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import validator from "validator";
@@ -17,6 +17,7 @@ const createToken = (id) =>{
 //register user
 const registerUser =async(req,res)=>{
     const {name,password,email}=req.body;
+    console.log("EMAIL:", email);
     try {
         const exists = await userModel.findOne({email});
         // checking is user already exists
@@ -56,3 +57,6 @@ const registerUser =async(req,res)=>{
         res.json({success:false,message:"Error"})
     }
 }
+
+// ONLY THIS LINE ADDED
+export {loginUser, registerUser};

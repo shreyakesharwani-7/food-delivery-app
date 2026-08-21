@@ -50,4 +50,4 @@ try {
      res.json({success:false,message:"Error"})
 }
 }
-export{addFood,listfood,removeFood}
+export{addFood,listfood,removeFood};
